@@ -1,19 +1,19 @@
 package com.mycompany.views;
 
 import com.mycompany.entidades.FlashCard;
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author leog4
  */
-public class AdicionarFlashCard extends javax.swing.JFrame {
+public class AdicionarFlashCard extends javax.swing.JDialog {
 
     private FlashCard flashCard;
-    private AdicionarBaralho telaChamou;
     
-    public AdicionarFlashCard(AdicionarBaralho tela) {
-        this.telaChamou = tela;
+    public AdicionarFlashCard(JDialog tela) {
+        super(tela, true);
         initComponents();
     }
 
@@ -166,10 +166,12 @@ public class AdicionarFlashCard extends javax.swing.JFrame {
         }
         
         flashCard = new FlashCard(textAreaPergunta.getText(), textAreaResposta.getText());
-        telaChamou.adicionarFlashCard(flashCard);
         dispose();
     }//GEN-LAST:event_botaoAdicionarActionPerformed
 
+    public FlashCard getFlashCard() {
+        return flashCard;
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoAdicionar;
     private javax.swing.JButton botaoVoltar1;

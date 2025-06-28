@@ -99,7 +99,7 @@ public final class GerenciadorGrade extends javax.swing.JInternalFrame {
         adicionarPeriodo.setVisible(true);
     }//GEN-LAST:event_jButtonAdicionarPeriodoActionPerformed
 
-    public static void carregarPeriodos(JPanel painel){
+    public static void carregarPeriodosFora(JPanel painel){
         ArrayList<Periodo> periodos = GerenciadorPeriodos.listarPeriodos();
         painel.setLayout(new MigLayout("insets 0, wrap 1", "[grow]", ""));
         painel.removeAll();

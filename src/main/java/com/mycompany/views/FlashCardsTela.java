@@ -13,11 +13,8 @@ import net.miginfocom.swing.MigLayout;
  * @author leog4
  */
 public class FlashCardsTela extends javax.swing.JInternalFrame {
-
-    private static JPanel painel;
-    
+  
     public FlashCardsTela() {
-        painel = panelBaralhos;
         initComponents();
         carregarBaralhos();
     }
@@ -101,21 +98,6 @@ public class FlashCardsTela extends javax.swing.JInternalFrame {
         adcionarBaralho.setVisible(true);
     }//GEN-LAST:event_botaoCriarBaralhoActionPerformed
 
-    public static void carregarBaralhosFora(){
-        ArrayList<Baralho> baralhos = GerenciadorFlashCard.listarBaralhos();
-        painel.removeAll();
-        painel.setLayout(new MigLayout("insets 0, wrap 1", "[grow]", ""));
-        
-        for(Baralho baralho: baralhos){
-            BaralhosCard baralhoCard = new BaralhosCard(baralho);
-            painel.add(baralhoCard, "growx");
-        }
-
-        painel.revalidate();
-        painel.repaint();
-
-    }
-    
     public void carregarBaralhos(){
         ArrayList<Baralho> baralhos = GerenciadorFlashCard.listarBaralhos();
         panelBaralhos.removeAll();

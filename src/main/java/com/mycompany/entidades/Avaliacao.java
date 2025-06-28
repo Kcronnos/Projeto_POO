@@ -56,7 +56,7 @@ public class Avaliacao {
         return dataAvaliacao;
     }
     
-    public void setNotaAvaliacao(double NotaAvaliacao){
+    public void setNotaAvaliacao(double notaAvaliacao){
         this.notaAvaliacao = notaAvaliacao;
     }
     

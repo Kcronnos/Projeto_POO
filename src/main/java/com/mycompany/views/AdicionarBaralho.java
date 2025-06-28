@@ -3,6 +3,7 @@ package com.mycompany.views;
 import com.mycompany.components.FlashCardPanel;
 import com.mycompany.controllers.GerenciadorFlashCard;
 import com.mycompany.entidades.FlashCard;
+import com.mycompany.interfaces.FlashCardPanelInterface;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import javax.swing.BoxLayout;
@@ -10,7 +11,7 @@ import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class AdicionarBaralho extends javax.swing.JDialog {
+public class AdicionarBaralho extends javax.swing.JDialog implements FlashCardPanelInterface{
 
     private ArrayList<FlashCard> flashCards = new ArrayList<>();
     private JPanel jPanel;
@@ -100,6 +101,11 @@ public class AdicionarBaralho extends javax.swing.JDialog {
         });
 
         botaoSalvarEPraticar.setText("SALVAR E PRATICAR");
+        botaoSalvarEPraticar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoSalvarEPraticarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -230,7 +236,49 @@ public class AdicionarBaralho extends javax.swing.JDialog {
         addFlashCard.setLocationRelativeTo(this);
         addFlashCard.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         addFlashCard.setVisible(true);
+        FlashCard fc = addFlashCard.getFlashCard();
+            if (fc != null) {
+            adicionarFlashCard(fc);
+        }
     }//GEN-LAST:event_botaoAdicionarFlashcardActionPerformed
+
+    private void botaoSalvarEPraticarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarEPraticarActionPerformed
+        int resposta;
+
+        if (jTextFieldTitulo.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Não Foi Possível Criar Um Baralho\n"
+                + "Pois o Titulo Não Foi Definido", "ATENÇÃO", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (jTextFieldValorDescricao.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Não Foi Possível Criar Um Baralho\n"
+                + "Pois a Descrição Não Foi Definida", "ATENÇÃO", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (flashCards.isEmpty()) {
+            resposta = JOptionPane.showConfirmDialog(this, "Quer Criar Um Baralho Sem adicionar FlashCard?",
+                "CONFIRMAÇÃO", JOptionPane.YES_NO_OPTION ,JOptionPane.QUESTION_MESSAGE);
+            if (resposta != JOptionPane.YES_OPTION) {
+                return;
+            }else{
+                GerenciadorFlashCard.criarBaralho(jTextFieldTitulo.getText(), jTextFieldValorDescricao.getText(), flashCards);
+                JOptionPane.showMessageDialog(rootPane, "Não há flashCards Para Praticar");
+                telaChamou.carregarBaralhos();
+                flashCards.clear();
+                dispose();
+            }
+        }
+
+        int idBaralho = GerenciadorFlashCard.criarBaralho(jTextFieldTitulo.getText(), jTextFieldValorDescricao.getText(), flashCards);
+        telaChamou.dispose();
+        flashCards.clear();
+        FlashCardPraticar pratBaralho = new FlashCardPraticar(GerenciadorFlashCard.procurarBaralho(idBaralho));
+        pratBaralho.setLocationRelativeTo(null);
+        pratBaralho.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_botaoSalvarEPraticarActionPerformed
 
     public void deletarFlashCard(FlashCard flashCard){
         flashCards.remove(flashCard);

@@ -1,7 +1,8 @@
 package com.mycompany.components;
 
 import com.mycompany.entidades.FlashCard;
-import com.mycompany.views.AdicionarBaralho;
+import com.mycompany.interfaces.FlashCardPanelInterface;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -10,11 +11,11 @@ import com.mycompany.views.AdicionarBaralho;
 public class FlashCardPanel extends javax.swing.JPanel {
 
     private FlashCard flashCard;
-    private AdicionarBaralho telaChamou;
+    FlashCardPanelInterface telaChamou;
     
-    public FlashCardPanel(FlashCard flashCard, AdicionarBaralho tela) {
+    public FlashCardPanel(FlashCard flashCard, FlashCardPanelInterface telaChamou) {
         this.flashCard = flashCard;
-        this.telaChamou = tela;
+        this.telaChamou = telaChamou;
         initComponents();
     }
 
@@ -56,9 +57,11 @@ public class FlashCardPanel extends javax.swing.JPanel {
         jLabel3.setText("RESPOSTA");
 
         textPanePergunta.setText(flashCard.getPergunta());
+        textPanePergunta.setEnabled(false);
         jScrollPane1.setViewportView(textPanePergunta);
 
         textPaneResposta.setText(flashCard.getResposta());
+        textPaneResposta.setEnabled(false);
         jScrollPane2.setViewportView(textPaneResposta);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -111,10 +114,16 @@ public class FlashCardPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoExcluirActionPerformed
+        int resposta = JOptionPane.showConfirmDialog(this, "Quer Realmente Excluir o FlashCard?",
+                "CONFIRMAÇÃO", JOptionPane.YES_NO_OPTION ,JOptionPane.QUESTION_MESSAGE);
+        if(resposta == JOptionPane.YES_OPTION){
         telaChamou.deletarFlashCard(flashCard);
+        }
     }//GEN-LAST:event_botaoExcluirActionPerformed
 
-
+    public FlashCard getFlashCardDel() {
+        return flashCard;
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoExcluir;
     private javax.swing.JLabel jLabel1;

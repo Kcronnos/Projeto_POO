@@ -6,6 +6,8 @@ package com.mycompany.components;
 
 import com.mycompany.controllers.GerenciadorFlashCard;
 import com.mycompany.entidades.Baralho;
+import com.mycompany.views.EditarBaralho;
+import com.mycompany.views.FlashCardPraticar;
 import java.awt.Color;
 import java.awt.Container;
 import javax.swing.BorderFactory;
@@ -48,6 +50,11 @@ public class BaralhosCard extends javax.swing.JPanel {
         });
 
         botaoPraticar.setText("PRATICAR");
+        botaoPraticar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoPraticarActionPerformed(evt);
+            }
+        });
 
         botaoExcluir.setBackground(new java.awt.Color(240, 248, 255));
         botaoExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/iconeApagar.png"))); // NOI18N
@@ -119,7 +126,9 @@ public class BaralhosCard extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoEditarBaralhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEditarBaralhoActionPerformed
-        
+        EditarBaralho edBaralho = new EditarBaralho(baralho);
+        edBaralho.setLocationRelativeTo(null);
+        edBaralho.setVisible(true);
     }//GEN-LAST:event_botaoEditarBaralhoActionPerformed
 
     private void botaoExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoExcluirActionPerformed
@@ -136,6 +145,12 @@ public class BaralhosCard extends javax.swing.JPanel {
             }
         }
     }//GEN-LAST:event_botaoExcluirActionPerformed
+
+    private void botaoPraticarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPraticarActionPerformed
+        FlashCardPraticar pratBaralho = new FlashCardPraticar(baralho);
+        pratBaralho.setLocationRelativeTo(null);
+        pratBaralho.setVisible(true);
+    }//GEN-LAST:event_botaoPraticarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

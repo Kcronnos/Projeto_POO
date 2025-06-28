@@ -104,6 +104,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         botaoPomodoro.setFocusable(false);
         botaoPomodoro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         botaoPomodoro.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        botaoPomodoro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoPomodoroActionPerformed(evt);
+            }
+        });
         jToolBar1.add(botaoPomodoro);
 
         desktopPrincipal.setLayer(painelBaixo, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -163,9 +168,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_botaoCalendarioActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void botaoPomodoroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPomodoroActionPerformed
+        TimerPomodoro timerPomodoro = new TimerPomodoro();
+        int x = (desktopPrincipal.getWidth() - timerPomodoro.getWidth()) / 2;
+        int y = (desktopPrincipal.getHeight() - timerPomodoro.getHeight()) / 2;
+        timerPomodoro.setLocation(x, y);
+        desktopPrincipal.add(timerPomodoro);
+        timerPomodoro.setVisible(true);
+    }//GEN-LAST:event_botaoPomodoroActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoBaralhosFlash;

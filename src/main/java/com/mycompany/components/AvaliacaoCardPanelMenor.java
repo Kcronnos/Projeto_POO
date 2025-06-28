@@ -6,9 +6,15 @@ package com.mycompany.components;
 
 import com.mycompany.entidades.Avaliacao;
 import com.mycompany.views.AdicionarDisciplina;
+import com.mycompany.views.EditarAvaliacao;
 import java.awt.Color;
+import java.awt.Container;
+import java.awt.Frame;
+import java.awt.Window;
 import java.text.SimpleDateFormat;
 import javax.swing.BorderFactory;
+import javax.swing.JDialog;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -133,13 +139,20 @@ public class AvaliacaoCardPanelMenor extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEditarActionPerformed
-        /*Container parent = getParent();
+        Window janelaPai = SwingUtilities.getWindowAncestor(SwingUtilities.getWindowAncestor(this));
+        
+        Container parent = getParent();
         if (parent != null) {
-            EditarAvaliacao EAvaliacao = new EditarAvaliacao(avaliacao, (JPanel) parent);
+            EditarAvaliacao EAvaliacao = new EditarAvaliacao(avaliacao, (Frame) janelaPai);
             EAvaliacao.setLocationRelativeTo(this);
             EAvaliacao.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
             EAvaliacao.setVisible(true);
-        }*/
+            
+            avaliacao.setNome(EAvaliacao.getAvaliacao().getNome());
+            avaliacao.setNotaAvaliacao(EAvaliacao.getAvaliacao().getNotaAvaliacao());
+            avaliacao.setDataAvaliacao(EAvaliacao.getAvaliacao().getDataAvaliacao());
+            AdicionarDisciplina.carregarAvaliacoes();
+        }
     }//GEN-LAST:event_botaoEditarActionPerformed
 
     private void botaoExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoExcluirActionPerformed

@@ -321,7 +321,11 @@ public class GerenciadorPeriodos {
         try{
             pst = conexao.prepareStatement(sql);
             pst.setString(1, avaliacao.getNome());
-            pst.setDate(2, new java.sql.Date(avaliacao.getDataAvaliacao().getTime()));
+            if (avaliacao.getDataAvaliacao() != null) {
+                pst.setDate(2, new java.sql.Date(avaliacao.getDataAvaliacao().getTime()));
+            } else {
+                pst.setNull(2, java.sql.Types.DATE);
+            }
             pst.setDouble(3, avaliacao.getNotaAvaliacao());
             pst.setInt(4, avaliacao.getId());
             pst.executeUpdate();

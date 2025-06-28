@@ -3,6 +3,7 @@ C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\c
 C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\components\AvaliacaoCardPanel.java
 C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\views\AdicionarPeriodo.java
 C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\entidades\Baralho.java
+C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\views\EditarBaralho.java
 C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\components\BotaoRedondo.java
 C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\dal\ModuloConexao.java
 C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\entidades\Periodo.java
@@ -15,14 +16,17 @@ C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\c
 C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\views\AdicionarDisciplina.java
 C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\views\AdicionarFlashCard.java
 C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\views\EditarPeriodo.java
+C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\views\TimerPomodoro.java
 C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\components\AvaliacaoCardPanelMenor.java
 C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\views\AdicionarAvaliacaoComDisciplina.java
 C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\mavenproject1\Main.java
-C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\views\CriarBaralho.java
 C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\views\EditarAvaliacao.java
 C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\controllers\GerenciadorFlashCard.java
+C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\interfaces\FlashCardPanelInterface.java
 C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\views\AdicionarBaralho.java
+C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\views\PomodoConfig.java
 C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\views\FlashCardsTela.java
+C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\views\FlashCardPraticar.java
 C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\entidades\Avaliacao.java
 C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\entidades\FlashCard.java
 C:\UNIVASF\Atividades POO\projetoPOO\mavenproject1\src\main\java\com\mycompany\entidades\Disciplina.java

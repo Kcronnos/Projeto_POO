@@ -133,6 +133,33 @@ public class GerenciadorFlashCard {
         return baralhos;
     }
     
+    public static Baralho procurarBaralho(int id){
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+        
+        String sql = "Select titulo, descricao from Baralhos where id = ?";
+        Baralho baralho = null;
+        
+        try{
+            pst = conexao.prepareStatement(sql);
+            pst.setInt(1, id);
+            rs = pst.executeQuery();
+            
+            while(rs.next()){
+                String titulo = rs.getString("titulo");
+                String descricao = rs.getString("descricao");
+                ArrayList<FlashCard> flashCards = new ArrayList<>();
+                flashCards = buscarFlashCards(id);
+                
+                baralho = new Baralho(id, titulo, descricao, flashCards);
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        return baralho;
+    }
+    
     public static int deletarBaralho(Baralho baralho){
         PreparedStatement pst = null;
         ResultSet rs = null;
@@ -148,9 +175,5 @@ public class GerenciadorFlashCard {
         }
         
         return resultado;
-    }
-    
-    public static void adicionarCardBaralho(Baralho baralho, ArrayList<FlashCard> flashCars){
-        
     }
 }

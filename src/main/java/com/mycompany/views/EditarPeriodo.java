@@ -183,7 +183,7 @@ public class EditarPeriodo extends javax.swing.JDialog {
             periodo.setNome(jTextFieldNomePeriodo.getText());
             GerenciadorPeriodos.atualizarPeriodo(periodo);
             
-            GerenciadorGrade.carregarPeriodos(painel);
+            GerenciadorGrade.carregarPeriodosFora(painel);
             dispose();
             }
     }//GEN-LAST:event_botaoAdicionarActionPerformed

@@ -3,13 +3,17 @@ package com.mycompany.components;
 import com.mycompany.controllers.GerenciadorPeriodos;
 import com.mycompany.entidades.Avaliacao;
 import com.mycompany.views.EditarAvaliacao;
+import com.mycompany.views.GerenciadorGrade;
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Frame;
+import java.awt.Window;
 import java.text.SimpleDateFormat;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import net.miginfocom.swing.MigLayout;
 
 /**
@@ -128,12 +132,18 @@ public class AvaliacaoCardPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEditarActionPerformed
-        Container parent = getParent();
+        Window janelaPai = SwingUtilities.getWindowAncestor(this);
+        
+        Container parent = getParent().getParent().getParent().getParent().getParent();
         if (parent != null) {
-            EditarAvaliacao EAvaliacao = new EditarAvaliacao(avaliacao, (JPanel) parent);
+            EditarAvaliacao EAvaliacao = new EditarAvaliacao(avaliacao, (Frame) janelaPai);
             EAvaliacao.setLocationRelativeTo(this);
             EAvaliacao.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
             EAvaliacao.setVisible(true);
+            
+            GerenciadorPeriodos.atualizarAvaliacao(EAvaliacao.getAvaliacao());
+
+            GerenciadorGrade.carregarPeriodosFora((JPanel)parent);
         }
     }//GEN-LAST:event_botaoEditarActionPerformed
 

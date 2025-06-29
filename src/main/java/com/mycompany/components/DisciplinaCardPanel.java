@@ -4,6 +4,7 @@ import com.mycompany.controllers.GerenciadorPeriodos;
 import com.mycompany.entidades.Avaliacao;
 import com.mycompany.entidades.Disciplina;
 import com.mycompany.views.AdicionarAvaliacao;
+import com.mycompany.views.EditarDisciplina;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -184,12 +185,10 @@ public class DisciplinaCardPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_botaoExcluirActionPerformed
 
     private void botaoEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEditarActionPerformed
-        GerenciadorPeriodos.atualizarDisciplina(disciplina);
-        Container parent = getParent();
-            if (parent != null) {
-                parent.revalidate();
-                parent.repaint();
-            }
+        EditarDisciplina editarDisciplina = new EditarDisciplina(disciplina, this);
+        editarDisciplina.setLocationRelativeTo(this);
+        editarDisciplina.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+        editarDisciplina.setVisible(true);
     }//GEN-LAST:event_botaoEditarActionPerformed
 
     private void botaoExpandirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoExpandirActionPerformed

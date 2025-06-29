@@ -235,11 +235,17 @@ public class AdicionarDisciplina extends javax.swing.JDialog {
         try {
             media = Double.parseDouble(mediaTexto);
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Nota inválida. Digite um número válido.", "Erro", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Média inválida. Digite um número válido.", "Erro", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
-
+        if(media != null){
+            if(media < 0){
+                JOptionPane.showMessageDialog(this, "Média inválida. Digite um número válido.", "Erro", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        }
+        
         int idDisciplina = GerenciadorPeriodos.criarDisciplina(jTextFieldNomeDisciplina.getText(), media, avaliacoes, periodo.getId());
 
         if (idDisciplina > 0) {

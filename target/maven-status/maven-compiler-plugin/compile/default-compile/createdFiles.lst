@@ -14,6 +14,7 @@ com\mycompany\components\BaralhosCard$2.class
 com\mycompany\views\AdicionarDisciplina.class
 com\mycompany\components\PeriodoCardPanel$3.class
 com\mycompany\views\EditarBaralho$2.class
+com\mycompany\views\EditarDisciplina$1.class
 com\mycompany\views\AdicionarAvaliacaoComDisciplina.class
 com\mycompany\components\AvaliacaoCardPanel$1.class
 com\mycompany\views\FlashCardsTela.class
@@ -33,6 +34,7 @@ com\mycompany\components\PeriodoCardPanel$2.class
 com\mycompany\mavenproject1\Main.class
 com\mycompany\views\EditarAvaliacao$1.class
 com\mycompany\views\AdicionarPeriodo$1.class
+com\mycompany\views\EditarDisciplina$2.class
 com\mycompany\components\AvaliacaoCardPanel$2.class
 com\mycompany\views\TelaPrincipal$2.class
 com\mycompany\views\TelaPrincipal.class
@@ -82,6 +84,7 @@ com\mycompany\views\EditarBaralho$1.class
 com\mycompany\views\AdicionarBaralho$1.class
 com\mycompany\views\AdicionarFlashCard$2.class
 com\mycompany\components\DisciplinaCardPanel$1.class
+com\mycompany\views\EditarDisciplina.class
 com\mycompany\controllers\GerenciadorPeriodos.class
 com\mycompany\dal\ModuloConexao.class
 com\mycompany\views\TimerPomodoro$5.class

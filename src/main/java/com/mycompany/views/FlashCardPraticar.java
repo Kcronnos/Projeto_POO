@@ -208,7 +208,12 @@ public class FlashCardPraticar extends javax.swing.JFrame {
     private void butaoProximaPerguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoProximaPerguntaActionPerformed
         contador++;
         if(contador == flashCards.size()){
+            contador = flashCards.size() - 1;
             JOptionPane.showMessageDialog(cartaPanel, "Não há mais FlashCards");
+            butaoResposta.setText("VER RESPOSTA");
+            areaDoTextoCard.setText(flashCards.get(contador).getPergunta());
+            tituloCardLabel.setText("PERGUNTA");
+            botaoResposta = true;
         }else{
             butaoResposta.setText("VER RESPOSTA");
             areaDoTextoCard.setText(flashCards.get(contador).getPergunta());
@@ -235,7 +240,12 @@ public class FlashCardPraticar extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         contador--;
         if(contador < 0){
+            contador = 0;
             JOptionPane.showMessageDialog(cartaPanel, "Esse é o primeiro FlashCards");
+            butaoResposta.setText("VER RESPOSTA");
+            areaDoTextoCard.setText(flashCards.get(contador).getPergunta());
+            tituloCardLabel.setText("PERGUNTA");
+            botaoResposta = true;
         }else{
             butaoResposta.setText("VER RESPOSTA");
             areaDoTextoCard.setText(flashCards.get(contador).getPergunta());

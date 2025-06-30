@@ -68,7 +68,6 @@ com\mycompany\views\FlashCardPraticar$1.class
 com\mycompany\views\TimerPomodoro.class
 com\mycompany\views\TimerPomodoro$4.class
 com\mycompany\components\DisciplinaCardPanel.class
-com\mycompany\components\BotaoRedondo.class
 com\mycompany\views\FlashCardsTela$2.class
 com\mycompany\components\DisciplinaCardPanel$2.class
 com\mycompany\views\GerenciadorGrade.class

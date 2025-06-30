@@ -72,7 +72,6 @@ com\mycompany\components\BotaoRedondo.class
 com\mycompany\views\FlashCardsTela$2.class
 com\mycompany\components\DisciplinaCardPanel$2.class
 com\mycompany\views\GerenciadorGrade.class
-com\mycompany\views\TelaPrincipal$4.class
 com\mycompany\entidades\Disciplina.class
 com\mycompany\components\AvaliacaoCardPanel.class
 com\mycompany\views\FlashCardsTela$1.class

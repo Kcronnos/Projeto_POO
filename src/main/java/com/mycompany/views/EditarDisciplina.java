@@ -9,10 +9,7 @@ import com.mycompany.entidades.Disciplina;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-/**
- *
- * @author leog4
- */
+
 public class EditarDisciplina extends javax.swing.JFrame {
 
     private Disciplina disciplina;

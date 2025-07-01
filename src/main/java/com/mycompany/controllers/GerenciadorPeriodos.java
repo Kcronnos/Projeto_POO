@@ -241,6 +241,48 @@ public class GerenciadorPeriodos {
             return disciplinas;
     }
     
+    public static double buscarMediaDaDisciplina(int idDisciplina){
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+        
+        String sql = "Select id, nome, dataAvaliacao, notaAvaliacao from Avaliacoes where idDisciplina = ?";
+        ArrayList<Avaliacao> avaliacoes = new ArrayList();
+        double media = 0.0;
+        double count = 0;
+        
+        try{
+            pst = conexao.prepareStatement(sql);
+            pst.setInt(1, idDisciplina);
+            rs = pst.executeQuery();
+            
+            while(rs.next()){
+                int id = rs.getInt("id");
+                String nome = rs.getString("nome");
+                Date dataAvaliacao = new java.util.Date(rs.getDate("dataAvaliacao").getTime());
+                double notaAvaliacao = rs.getDouble("notaAvaliacao");
+                
+                Avaliacao avaliacao = new Avaliacao(id, nome, dataAvaliacao, notaAvaliacao, idDisciplina);
+                
+                avaliacoes.add(avaliacao);
+            }
+            
+            if(avaliacoes.isEmpty()){
+                return media;
+            }else{
+                for(Avaliacao avaliacao: avaliacoes){
+                    media += avaliacao.getNotaAvaliacao();
+                    count++;
+                }
+                
+                media = media/count;
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        return media;
+    }
+    
     public static int DeletarDisciplina(Disciplina disciplina){
         PreparedStatement pst = null;
         ResultSet rs = null;

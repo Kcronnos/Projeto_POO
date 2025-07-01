@@ -93,7 +93,7 @@ public class DisciplinaCardPanel extends javax.swing.JPanel {
 
         mediaAprovarLabel.setText("MÉDIA APROVAÇÃO:");
 
-        valorMediaAtualLabel.setText("0.0");
+        valorMediaAtualLabel.setText(String.valueOf(GerenciadorPeriodos.buscarMediaDaDisciplina(disciplina.getId())));
 
         mediaAtualLabel.setText("MÉDIA ATUAL:");
 

@@ -46,7 +46,7 @@ public class AdicionarFlashCard extends javax.swing.JDialog {
         tituloLabel.setBackground(new java.awt.Color(255, 255, 255));
         tituloLabel.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         tituloLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tituloLabel.setText("ADICINONAR NOVA AVALIAÇÃO");
+        tituloLabel.setText("ADICINONAR NOVO FLASHCARD");
 
         respostaLabel.setBackground(new java.awt.Color(255, 255, 255));
         respostaLabel.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
